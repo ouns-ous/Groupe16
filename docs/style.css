@@ -2,21 +2,21 @@
    DESIGN SYSTEM & VARIABLES
    ========================================================================== */
 :root {
-  --bg-primary: #0b0f19;
-  --bg-secondary: #111827;
-  --bg-card: rgba(17, 24, 39, 0.7);
-  --bg-card-hover: rgba(31, 41, 55, 0.8);
-  --border-color: rgba(255, 255, 255, 0.08);
-  --border-color-hover: rgba(59, 130, 246, 0.3);
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --border-color: #e2e8f0;
+  --border-color-hover: rgba(243, 146, 0, 0.3);
   
-  --text-primary: #f3f4f6;
-  --text-secondary: #9ca3af;
-  --text-muted: #6b7280;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
   
-  --primary: #3b82f6;
-  --primary-glow: rgba(59, 130, 246, 0.15);
-  --primary-gradient: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);
-  --text-gradient: linear-gradient(135deg, #ffffff 0%, #93c5fd 100%);
+  --primary: #f39200;
+  --primary-glow: rgba(243, 146, 0, 0.1);
+  --primary-gradient: linear-gradient(135deg, #ffb03a 0%, #d78100 100%);
+  --text-gradient: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   
   --success: #10b981;
   --success-glow: rgba(16, 185, 129, 0.15);
@@ -66,7 +66,7 @@ a {
 }
 
 a:hover {
-  color: #60a5fa;
+  color: #f8a51b;
 }
 
 /* Scrollbar Styling */
@@ -97,7 +97,7 @@ a:hover {
   left: 0;
   right: 0;
   height: var(--navbar-height);
-  background: rgba(11, 15, 25, 0.8);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
@@ -144,25 +144,29 @@ a:hover {
 
 .nav-link:hover, .nav-link.active {
   color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(15, 23, 42, 0.05);
 }
-
-.nav-launch {
-  background: var(--primary-gradient);
-  color: #ffffff;
+.sidebar-toggle {
+  background: none;
   border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.85rem;
+  color: var(--text-secondary);
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 6px;
   transition: var(--transition-fast);
+  margin-right: 0.5rem;
 }
 
-.nav-launch:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+.sidebar-toggle:hover {
+  background: var(--bg-card-hover);
+  color: var(--primary);
+}
+
+.sidebar-toggle svg {
+  display: block;
 }
 
 /* ==========================================================================
@@ -177,6 +181,7 @@ a:hover {
   padding: 8rem 2rem 4rem;
   text-align: center;
   overflow: hidden;
+  transition: margin-left var(--transition-normal);
 }
 
 .hero-bg {
@@ -193,8 +198,8 @@ a:hover {
   width: 100%;
   height: 100%;
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
   background-size: 40px 40px;
   background-position: center center;
   mask-image: radial-gradient(circle at 50% 50%, black 40%, transparent 80%);
@@ -214,7 +219,7 @@ a:hover {
   left: 15%;
   width: 400px;
   height: 400px;
-  background: #3b82f6;
+  background: #f39200;
   animation: float-glow 10s infinite alternate;
 }
 
@@ -242,7 +247,7 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(15, 23, 42, 0.03);
   border: 1px solid var(--border-color);
   padding: 0.5rem 1rem;
   border-radius: 50px;
@@ -289,7 +294,7 @@ a:hover {
   justify-content: center;
   gap: 2rem;
   margin-bottom: 3.5rem;
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(15, 23, 42, 0.03);
   border: 1px solid var(--border-color);
   padding: 1.5rem 2rem;
   border-radius: 16px;
@@ -337,18 +342,18 @@ a:hover {
   padding: 0.8rem 2rem;
   border-radius: 8px;
   font-weight: 600;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 14px rgba(243, 146, 0, 0.3);
   transition: var(--transition-fast);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+  box-shadow: 0 6px 20px rgba(243, 146, 0, 0.5);
   color: white;
 }
 
 .btn-ghost {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(15, 23, 42, 0.03);
   border: 1px solid var(--border-color);
   color: var(--text-primary);
   padding: 0.8rem 2rem;
@@ -358,7 +363,7 @@ a:hover {
 }
 
 .btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(15, 23, 42, 0.08);
   border-color: var(--text-secondary);
 }
 
@@ -406,11 +411,12 @@ a:hover {
   left: 0;
   bottom: 0;
   width: var(--sidebar-width);
-  background: rgba(11, 15, 25, 0.5);
+  background: var(--bg-secondary);
   border-right: 1px solid var(--border-color);
   padding: 2.5rem 1.5rem;
   overflow-y: auto;
   z-index: 900;
+  transition: transform var(--transition-normal);
 }
 
 .toc-title {
@@ -441,7 +447,7 @@ a:hover {
 
 .toc-link:hover {
   color: var(--text-primary);
-  border-left-color: rgba(59, 130, 246, 0.4);
+  border-left-color: rgba(243, 146, 0, 0.4);
   padding-left: 0.9rem;
 }
 
@@ -449,7 +455,7 @@ a:hover {
   color: var(--primary);
   font-weight: 600;
   border-left-color: var(--primary);
-  background: rgba(59, 130, 246, 0.05);
+  background: rgba(243, 146, 0, 0.05);
   border-radius: 0 4px 4px 0;
 }
 
@@ -466,6 +472,7 @@ a:hover {
   margin-left: var(--sidebar-width);
   padding: 4rem 3rem 6rem;
   max-width: 1100px;
+  transition: margin-left var(--transition-normal);
 }
 
 /* ==========================================================================
@@ -492,7 +499,7 @@ a:hover {
 .section-number {
   font-size: 2.5rem;
   font-weight: 800;
-  color: rgba(59, 130, 246, 0.3);
+  color: rgba(243, 146, 0, 0.3);
   line-height: 1;
 }
 
@@ -512,7 +519,7 @@ a:hover {
 .callout {
   display: flex;
   gap: 1.25rem;
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(15, 23, 42, 0.03);
   border-left: 4px solid var(--primary);
   border-radius: 0 12px 12px 0;
   padding: 1.25rem 1.5rem;
@@ -525,7 +532,7 @@ a:hover {
 
 .callout-info {
   border-left-color: var(--primary);
-  background: rgba(59, 130, 246, 0.05);
+  background: rgba(243, 146, 0, 0.05);
 }
 
 .callout-success {
@@ -545,7 +552,7 @@ a:hover {
   border-radius: 4px;
   font-size: 0.85rem;
   color: var(--text-primary);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(15, 23, 42, 0.05);
 }
 
 /* ==========================================================================
@@ -663,41 +670,68 @@ a:hover {
 
 /* Project Structure box */
 .structure-box {
-  background: #0d1117;
+  background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 2rem;
   margin-bottom: 3rem;
+  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
 }
 
 .file-tree {
   font-family: var(--font-mono);
   font-size: 0.85rem;
   line-height: 1.8;
+  color: var(--text-secondary);
 }
 
 .tree-item {
-  padding-left: 1.5rem;
   position: relative;
+  padding-left: 2rem;
 }
 
-.tree-item::before {
-  content: '├─';
+.tree-root {
+  padding-left: 0;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.tree-root::before {
+  content: none;
+}
+
+/* Indent levels */
+.tree-l1 {
+  padding-left: 2rem;
+}
+.tree-l2 {
+  padding-left: 4rem;
+}
+
+/* Branch lines (using ::before) */
+.tree-l1::before {
+  content: '├──';
   position: absolute;
-  left: 0;
+  left: 0.5rem;
   color: var(--text-muted);
 }
 
-.tree-root::before { content: ''; }
-.tree-root { padding-left: 0; font-weight: 700; }
+.tree-l2::before {
+  content: '│   ├──';
+  position: absolute;
+  left: 0.5rem;
+  color: var(--text-muted);
+}
 
-.tree-l1 { padding-left: 1.5rem; }
-.tree-l2 { padding-left: 3rem; }
-.tree-l2::before { content: '│  ├─'; left: 1.5rem; }
+/* Closing branches */
+.tree-last.tree-l1::before {
+  content: '└──';
+}
 
-.tree-file::before { content: '📄'; font-size: 0.75rem; left: auto; margin-right: 0.5rem; position: static; }
-.tree-item.tree-file { padding-left: 1.5rem; }
-.tree-l2.tree-file::before { content: '│  📄'; position: static; margin-right: 0.5rem; }
+.tree-last.tree-l2::before {
+  content: '│   └──';
+}
 
 .tree-comment {
   color: var(--text-muted);
@@ -711,12 +745,13 @@ a:hover {
   padding: 0.1rem 0.35rem;
   border-radius: 4px;
   margin-left: 0.5rem;
-  background: rgba(255,255,255,0.08);
+  background: var(--bg-primary);
+  color: var(--text-secondary);
 }
 
 .highlight-file {
-  color: #c9d1d9;
-  font-weight: 500;
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 .highlight-file .tree-badge {
@@ -736,14 +771,14 @@ a:hover {
 }
 
 .ui-label {
-  background: #1f2937;
+  background: rgba(15, 23, 42, 0.05);
   padding: 0.75rem 1.5rem;
   font-weight: 700;
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   border-bottom: 1px solid var(--border-color);
-  color: var(--text-secondary);
+  color: var(--text-primary);
 }
 
 .ui-content {
@@ -759,35 +794,26 @@ a:hover {
   }
 }
 
-.ui-screenshot-placeholder {
-  background: #090d16;
+.ui-screenshot {
+  margin: 1.5rem 0;
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.05);
-  padding: 1rem;
-  min-height: 220px;
-  display: flex;
-}
-
-.placeholder-inner {
-  width: 100%;
-  border-radius: 8px;
+  border: 1px solid var(--border-color);
   overflow: hidden;
-  background: #111827;
-  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+  background: var(--bg-secondary);
 }
 
-/* Sidebar Mockup */
-.placeholder-sidebar {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+.screenshot-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
 }
 
-.ps-title { font-weight: 800; font-size: 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; }
-.ps-section { font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }
-.ps-input, .ps-select { background: #1f2937; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 0.4rem 0.6rem; font-size: 0.75rem; color: var(--text-secondary); }
-.ps-btn { background: var(--primary); border-radius: 4px; padding: 0.5rem; text-align: center; font-size: 0.8rem; font-weight: 600; cursor: pointer; color: white; }
+.ui-screenshot:hover .screenshot-img {
+  transform: scale(1.01);
+}
 
 .ui-desc {
   display: flex;
@@ -862,7 +888,7 @@ a:hover {
 }
 
 .doc-table tr:hover td {
-  background: rgba(255, 255, 255, 0.01);
+  background: rgba(15, 23, 42, 0.01);
 }
 
 /* ==========================================================================
@@ -901,7 +927,7 @@ a:hover {
 
 /* Graph Card */
 .graph-card {
-  background: #090d16;
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 1.75rem;
@@ -993,7 +1019,7 @@ a:hover {
 }
 
 .hm-cell {
-  background: rgba(59, 130, 246, var(--intensity, 0.1));
+  background: rgba(243, 146, 0, var(--intensity, 0.1));
   color: #fff;
   font-family: var(--font-mono);
   font-size: 0.8rem;
@@ -1004,13 +1030,13 @@ a:hover {
 }
 
 .hm-cell[style*="--intensity:1.0"] {
-  background: #3b82f6;
+  background: #f39200;
   text-shadow: 0 0 10px rgba(0,0,0,0.5);
   border-color: rgba(255,255,255,0.2);
 }
 
 .hm-cell[style*="--intensity:0.99"] {
-  background: #2563eb;
+  background: #d78100;
   border-color: rgba(255,255,255,0.15);
 }
 
@@ -1243,7 +1269,7 @@ a:hover {
 .rec-num {
   font-size: 2.5rem;
   font-weight: 800;
-  color: rgba(59, 130, 246, 0.1);
+  color: rgba(243, 146, 0, 0.1);
   position: absolute;
   top: 0.5rem;
   right: 1rem;
@@ -1266,7 +1292,7 @@ a:hover {
    MATHEMATICAL MODEL & CONTRAINTS
    ========================================================================== */
 .math-box {
-  background: #0d1117;
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 1.5rem 2rem;
@@ -1328,7 +1354,7 @@ a:hover {
 }
 
 .math-formula {
-  background: #090d16;
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 1.5rem;
@@ -1414,8 +1440,8 @@ a:hover {
 }
 
 .cst-formula {
-  background: #090d16;
-  border: 1px solid rgba(255,255,255,0.03);
+  background: rgba(15, 23, 42, 0.03);
+  border: 1px solid var(--border-color);
   padding: 0.75rem 1rem;
   border-radius: 8px;
   font-family: var(--font-mono);
@@ -1444,7 +1470,7 @@ a:hover {
    METALLURGICAL FLOW DIAGRAM
    ========================================================================== */
 .flow-diagram {
-  background: #090d16;
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 2.5rem;
@@ -1533,7 +1559,7 @@ a:hover {
    CODE & CODE HIGHLIGHTS
    ========================================================================== */
 .code-module {
-  background: #0d1117;
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   overflow: hidden;
@@ -1541,7 +1567,7 @@ a:hover {
 }
 
 .module-header {
-  background: #161b22;
+  background: rgba(15, 23, 42, 0.03);
   padding: 1.25rem 1.75rem;
   display: flex;
   align-items: center;
@@ -1595,8 +1621,8 @@ a:hover {
 
 .code-block {
   padding: 1.5rem 1.75rem;
-  background: #090d16;
-  border-bottom: 1px solid rgba(255,255,255,0.03);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
   overflow-x: auto;
 }
 
@@ -1607,15 +1633,15 @@ a:hover {
 .code-block code {
   font-family: var(--font-mono);
   font-size: 0.85rem;
-  color: #e6edf3;
+  color: var(--text-primary);
   line-height: 1.6;
 }
 
-.kw { color: #ff7b72; font-weight: 600; } /* Keyword */
-.fn { color: #d2a8ff; } /* Function */
-.str { color: #a5d6ff; } /* String */
-.cm { color: #8b949e; font-style: italic; } /* Comment */
-.num { color: #79c0ff; } /* Number */
+.kw { color: #d73a49; font-weight: 600; } /* Keyword */
+.fn { color: #6f42c1; } /* Function */
+.str { color: #032f62; } /* String */
+.cm { color: #6a737d; font-style: italic; } /* Comment */
+.num { color: #005cc5; } /* Number */
 
 .fn-list {
   padding: 1.5rem 1.75rem;
@@ -1668,7 +1694,7 @@ a:hover {
   font-weight: 700;
   font-size: 0.95rem;
   font-family: var(--font-mono);
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(243, 146, 0, 0.2);
 }
 
 .wf-content h5 {
@@ -1891,7 +1917,7 @@ a:hover {
 
 /* Accordion details/summary styling */
 details.q-item-details {
-  background: rgba(255, 255, 255, 0.015);
+  background: rgba(15, 23, 42, 0.015);
   border: 1px solid var(--border-color);
   border-radius: 8px;
   margin-bottom: 1rem;
@@ -1900,13 +1926,13 @@ details.q-item-details {
 }
 
 details.q-item-details:hover {
-  border-color: rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(15, 23, 42, 0.15);
+  background: rgba(15, 23, 42, 0.03);
 }
 
 details.q-item-details[open] {
   border-color: var(--primary);
-  background: rgba(59, 130, 246, 0.03);
+  background: rgba(243, 146, 0, 0.03);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -1940,7 +1966,7 @@ details.q-item-details[open] summary.q-item-summary::after {
 .q-answer-content {
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(15, 23, 42, 0.05);
   font-size: 0.9rem;
   color: var(--text-secondary);
   line-height: 1.6;
@@ -1964,7 +1990,7 @@ details.q-item-details[open] summary.q-item-summary::after {
   padding: 0.15rem 0.3rem;
   border-radius: 4px;
   font-size: 0.85rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(15, 23, 42, 0.05);
 }
 
 .q-badge {
@@ -1992,7 +2018,7 @@ details.q-item-details[open] summary.q-item-summary::after {
 
 /* Footer */
 .site-footer {
-  background: #090d16;
+  background: var(--bg-secondary);
   border-top: 1px solid var(--border-color);
   padding: 3rem 2rem;
   margin-top: 8rem;
@@ -2043,15 +2069,60 @@ details.q-item-details[open] summary.q-item-summary::after {
   color: var(--text-primary);
 }
 
-/* Responsive adjustements */
+/* Layout states & collapse styles */
+@media (min-width: 993px) {
+  .hero {
+    margin-left: var(--sidebar-width);
+  }
+  .main-content {
+    margin-left: var(--sidebar-width);
+  }
+  
+  body.sidebar-collapsed .hero,
+  body.sidebar-collapsed .main-content {
+    margin-left: 0;
+  }
+  
+  body.sidebar-collapsed .toc-sidebar {
+    transform: translateX(-100%);
+  }
+}
+
+/* Responsive adjustments & Mobile Sidebar Drawer */
 @media (max-width: 992px) {
   .toc-sidebar {
-    display: none;
+    transform: translateX(-100%);
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.15);
+    z-index: 1100;
+    background: var(--bg-secondary);
   }
+  
+  body.sidebar-mobile-open .toc-sidebar {
+    transform: translateX(0);
+  }
+  
+  body.sidebar-mobile-open {
+    overflow: hidden;
+  }
+  
+  body.sidebar-mobile-open::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 1050;
+  }
+  
   .main-content {
     margin-left: 0;
     padding: 2rem 1.5rem;
   }
+  
   .hero-title {
     font-size: 2.8rem;
   }

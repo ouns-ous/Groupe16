@@ -14,22 +14,25 @@
 <!-- ══════════════════════════════════════════════════════════ NAVBAR -->
 <nav class="navbar" id="navbar">
   <div class="nav-brand">
-    <span class="nav-logo">🏭</span>
+    <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle Sidebar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+    <img class="nav-logo" src="../logo_maghreb_steel.jpg" height="28" style="vertical-align: middle; margin-right: 8px; border-radius: 4px;"/>
     <span class="nav-title">Maghreb Steel <span class="nav-sub">— Docs</span></span>
   </div>
   <div class="nav-links">
     <a href="#apercu" class="nav-link">Aperçu</a>
     <a href="#application" class="nav-link">Application</a>
     <a href="#modele" class="nav-link">Modèle LP</a>
-    <a href="constraints.html" class="nav-link" style="color: #60a5fa; font-weight: bold; border-bottom: 2px dashed rgba(96, 165, 250, 0.4);">📊 Contraintes Visuelles</a>
     <a href="#code" class="nav-link">Code</a>
     <a href="#scenarios" class="nav-link">Scénarios</a>
     <a href="#resultats" class="nav-link">Résultats</a>
     <a href="#questions" class="nav-link">Questions</a>
   </div>
-  <button class="nav-launch" onclick="window.open('http://localhost:8501','_blank')">
-    🚀 Lancer l'App
-  </button>
 </nav>
 
 <!-- ══════════════════════════════════════════════════════════ HERO -->
@@ -53,9 +56,9 @@
       en collaboration avec <strong>Maghreb Steel</strong>, leader marocain de la sidérurgie des produits plats.
     </p>
     <div class="hero-stats">
-      <div class="stat-item"><span class="stat-val">42.9M</span><span class="stat-lbl">MAD de marge</span></div>
+      <div class="stat-item"><span class="stat-val">34.7M</span><span class="stat-lbl">MAD de marge</span></div>
       <div class="stat-sep"></div>
-      <div class="stat-item"><span class="stat-val">88%</span><span class="stat-lbl">Taux de service</span></div>
+      <div class="stat-item"><span class="stat-val">73.5%</span><span class="stat-lbl">Taux de service</span></div>
       <div class="stat-sep"></div>
       <div class="stat-item"><span class="stat-val">65</span><span class="stat-lbl">Commandes</span></div>
       <div class="stat-sep"></div>
@@ -63,12 +66,7 @@
     </div>
     <div class="hero-cta">
       <a href="#apercu" class="btn-primary">Lire la documentation</a>
-      <a href="constraints.html" class="btn-ghost" style="border-color: #3b82f6; color: #60a5fa; box-shadow: 0 0 15px rgba(59,130,246,0.2);">📊 Contraintes Visuelles</a>
-      <a href="http://localhost:8501" target="_blank" class="btn-ghost">Ouvrir l'application →</a>
     </div>
-  </div>
-  <div class="hero-scroll">
-    <div class="scroll-indicator"></div>
   </div>
 </header>
 
@@ -196,19 +194,19 @@
       <div class="file-tree">
         <div class="tree-item tree-root">📁 optimisation/</div>
         <div class="tree-item tree-l1">📁 data/ <span class="tree-comment">— Fichier Excel source</span></div>
-        <div class="tree-item tree-l2 tree-file">📊 Donnees_MaghrebSteel.xlsx</div>
+        <div class="tree-item tree-l2 tree-last">📊 Donnees_MaghrebSteel.xlsx</div>
         <div class="tree-item tree-l1">📁 src/ <span class="tree-comment">— Modules Python</span></div>
-        <div class="tree-item tree-l2 tree-file highlight-file">🐍 data_loader.py <span class="tree-badge">Données</span></div>
-        <div class="tree-item tree-l2 tree-file highlight-file">🐍 model.py <span class="tree-badge">Optimisation</span></div>
+        <div class="tree-item tree-l2 highlight-file">🐍 data_loader.py <span class="tree-badge">Données</span></div>
+        <div class="tree-item tree-l2 tree-last highlight-file">🐍 model.py <span class="tree-badge">Optimisation</span></div>
         <div class="tree-item tree-l1">📁 outputs/ <span class="tree-comment">— Résultats exportés automatiquement</span></div>
-        <div class="tree-item tree-l2 tree-file">📈 resultats_complets.xlsx</div>
-        <div class="tree-item tree-l2 tree-file">📄 plan_marche.csv</div>
-        <div class="tree-item tree-l2 tree-file">📄 shadow_prices.csv</div>
+        <div class="tree-item tree-l2">📈 resultats_complets.xlsx</div>
+        <div class="tree-item tree-l2">📄 plan_marche.csv</div>
+        <div class="tree-item tree-l2 tree-last">📄 shadow_prices.csv</div>
         <div class="tree-item tree-l1">📁 tests/ <span class="tree-comment">— Validation</span></div>
-        <div class="tree-item tree-l1 tree-file highlight-file">🌐 app.py <span class="tree-badge">Interface Web</span></div>
-        <div class="tree-item tree-l1 tree-file">🐍 main.py <span class="tree-comment">— CLI</span></div>
-        <div class="tree-item tree-l1 tree-file">📄 requirements.txt</div>
-        <div class="tree-item tree-l1 tree-file">📖 README.md</div>
+        <div class="tree-item tree-l1 highlight-file">🌐 app.py <span class="tree-badge">Interface Web</span></div>
+        <div class="tree-item tree-l1">🐍 main.py <span class="tree-comment">— CLI</span></div>
+        <div class="tree-item tree-l1">📄 requirements.txt</div>
+        <div class="tree-item tree-l1 tree-last">📖 README.md</div>
       </div>
     </div>
   </section>
@@ -236,17 +234,8 @@
     <div class="ui-block" id="sidebar-doc">
       <div class="ui-label">📌 Barre latérale (Sidebar)</div>
       <div class="ui-content">
-        <div class="ui-screenshot-placeholder">
-          <div class="placeholder-inner">
-            <div class="placeholder-sidebar">
-              <div class="ps-title">🏭 Maghreb Steel</div>
-              <div class="ps-section">⚙️ Configuration</div>
-              <div class="ps-input">data/Donnees_MaghrebSteel.xlsx</div>
-              <div class="ps-section">🎭 Scénario</div>
-              <div class="ps-select">Base ▼</div>
-              <div class="ps-btn">🚀 Lancer l'optimisation</div>
-            </div>
-          </div>
+        <div class="ui-screenshot">
+          <img src="screenshot_main.png" alt="Barre latérale et configuration" class="screenshot-img" />
         </div>
         <div class="ui-desc">
           <h4>Ce qu'elle contient :</h4>
@@ -267,27 +256,8 @@
     <div class="ui-block" id="kpi-doc">
       <div class="ui-label">📊 Cartes KPI (en haut de page)</div>
       <div class="ui-content">
-        <div class="kpi-demo">
-          <div class="kpi-demo-card">
-            <div class="kd-val">42.9M</div>
-            <div class="kd-lbl">Marge Totale (MAD)</div>
-          </div>
-          <div class="kpi-demo-card">
-            <div class="kd-val" style="color:#34d399">88%</div>
-            <div class="kd-lbl">Taux de Service</div>
-          </div>
-          <div class="kpi-demo-card">
-            <div class="kd-val">14 929</div>
-            <div class="kd-lbl">Tonnage Livré (T)</div>
-          </div>
-          <div class="kpi-demo-card">
-            <div class="kd-val" style="color:#f59e0b">8</div>
-            <div class="kd-lbl">Cdes Refusées</div>
-          </div>
-          <div class="kpi-demo-card">
-            <div class="kd-val">2 874</div>
-            <div class="kd-lbl">Marge/Tonne (MAD/T)</div>
-          </div>
+        <div class="ui-screenshot">
+          <img src="screenshot_main.png" alt="Cartes KPI et vue principale" class="screenshot-img" />
         </div>
         <table class="doc-table" style="margin-top:1.5rem">
           <thead>
@@ -314,107 +284,27 @@
         </div>
       </div>
       <div class="tab-content">
-        <div class="graph-card">
-          <div class="graph-header">
-            <h4>🔥 Heatmap — Tonnage par ligne × semaine</h4>
-            <span class="graph-type">Plotly Heatmap</span>
-          </div>
-          <div class="heatmap-demo">
-            <div class="hm-header">
-              <div class="hm-corner"></div>
-              <div class="hm-col">S1</div><div class="hm-col">S2</div><div class="hm-col">S3</div><div class="hm-col">S4</div>
-            </div>
-            <div class="hm-row">
-              <div class="hm-row-label">PK</div>
-              <div class="hm-cell" style="--intensity:0.55">7 655</div>
-              <div class="hm-cell" style="--intensity:0.39">5 488</div>
-              <div class="hm-cell" style="--intensity:0.41">5 754</div>
-              <div class="hm-cell" style="--intensity:0.21">3 066</div>
-            </div>
-            <div class="hm-row">
-              <div class="hm-row-label">CRMB</div>
-              <div class="hm-cell" style="--intensity:0.99">6 237</div>
-              <div class="hm-cell" style="--intensity:0.82">4 332</div>
-              <div class="hm-cell" style="--intensity:0.55">2 907</div>
-              <div class="hm-cell" style="--intensity:0.37">1 939</div>
-            </div>
-            <div class="hm-row">
-              <div class="hm-row-label">LGA</div>
-              <div class="hm-cell" style="--intensity:1.0">1 750</div>
-              <div class="hm-cell" style="--intensity:0.68">1 197</div>
-              <div class="hm-cell" style="--intensity:0.28">497</div>
-              <div class="hm-cell" style="--intensity:0.13">229</div>
-            </div>
-            <div class="hm-row">
-              <div class="hm-row-label">LGB</div>
-              <div class="hm-cell" style="--intensity:0.77">2 093</div>
-              <div class="hm-cell" style="--intensity:0.55">1 493</div>
-              <div class="hm-cell" style="--intensity:0.36">986</div>
-              <div class="hm-cell" style="--intensity:0.18">503</div>
-            </div>
-          </div>
-          <div class="graph-legend">
-            <span class="legend-item"><span class="legend-color" style="background:rgba(59,130,246,0.1)"></span> Faible charge</span>
-            <span class="legend-item"><span class="legend-color" style="background:rgba(59,130,246,0.6)"></span> Charge moyenne</span>
-            <span class="legend-item"><span class="legend-color" style="background:#3b82f6"></span> Goulot</span>
-          </div>
-          <p class="graph-desc">
-            <strong>Comment lire ce graphe :</strong> Chaque cellule = tonnage total (en T) transitant par une ligne à une semaine donnée. Plus la cellule est foncée, plus la ligne est chargée. Les cellules très foncées indiquent les <strong>goulots d'étranglement</strong>.
-          </p>
+        <div class="ui-screenshot">
+          <img src="screenshot_plan.png" alt="Plan de Marche - Heatmap et mix de production" class="screenshot-img" />
         </div>
-
-        <div class="graph-card">
-          <div class="graph-header">
-            <h4>📊 Barres empilées — Tonnage par famille × semaine × ligne</h4>
-            <span class="graph-type">Plotly Bar Chart</span>
+        
+        <div class="content-grid" style="margin-top: 1.5rem; gap: 2rem;">
+          <div class="content-block">
+            <h4 style="color:var(--text-primary); margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;">
+              <span>🔥</span> Heatmap — Tonnage par ligne × semaine
+            </h4>
+            <p style="font-size:0.9rem; color:var(--text-secondary);">
+              <strong>Comment lire :</strong> Chaque cellule indique le tonnage total (en T) transitant par une ligne à une semaine donnée. Plus la cellule est colorée/foncée, plus la ligne est chargée. Les zones de forte intensité mettent en évidence les <strong>goulots d'étranglement</strong> de production.
+            </p>
           </div>
-          <div class="bar-demo">
-            <div class="bar-group">
-              <div class="bar-label">S1</div>
-              <div class="bar-stack">
-                <div class="bar-seg" style="height:60%; background:#3b82f6" title="CRC"></div>
-                <div class="bar-seg" style="height:25%; background:#10b981" title="HDG"></div>
-                <div class="bar-seg" style="height:10%; background:#f59e0b" title="PPGI"></div>
-                <div class="bar-seg" style="height:5%; background:#8b5cf6" title="BACR"></div>
-              </div>
-            </div>
-            <div class="bar-group">
-              <div class="bar-label">S2</div>
-              <div class="bar-stack">
-                <div class="bar-seg" style="height:45%; background:#3b82f6"></div>
-                <div class="bar-seg" style="height:30%; background:#10b981"></div>
-                <div class="bar-seg" style="height:15%; background:#f59e0b"></div>
-                <div class="bar-seg" style="height:10%; background:#8b5cf6"></div>
-              </div>
-            </div>
-            <div class="bar-group">
-              <div class="bar-label">S3</div>
-              <div class="bar-stack">
-                <div class="bar-seg" style="height:50%; background:#3b82f6"></div>
-                <div class="bar-seg" style="height:20%; background:#10b981"></div>
-                <div class="bar-seg" style="height:20%; background:#f59e0b"></div>
-                <div class="bar-seg" style="height:10%; background:#8b5cf6"></div>
-              </div>
-            </div>
-            <div class="bar-group">
-              <div class="bar-label">S4</div>
-              <div class="bar-stack">
-                <div class="bar-seg" style="height:30%; background:#3b82f6"></div>
-                <div class="bar-seg" style="height:35%; background:#10b981"></div>
-                <div class="bar-seg" style="height:25%; background:#f59e0b"></div>
-                <div class="bar-seg" style="height:10%; background:#8b5cf6"></div>
-              </div>
-            </div>
+          <div class="content-block">
+            <h4 style="color:var(--text-primary); margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;">
+              <span>📊</span> Barres empilées — Tonnage par famille
+            </h4>
+            <p style="font-size:0.9rem; color:var(--text-secondary);">
+              <strong>Comment lire :</strong> Chaque barre représente la production totale d'une semaine, décomposée par famille de produits (CRC, HDG, PPGI, BACR). Cela permet de suivre l'évolution hebdomadaire du mix produit planifié.
+            </p>
           </div>
-          <div class="bar-legend">
-            <span><span style="background:#3b82f6" class="legend-dot"></span>CRC</span>
-            <span><span style="background:#10b981" class="legend-dot"></span>HDG</span>
-            <span><span style="background:#f59e0b" class="legend-dot"></span>PPGI</span>
-            <span><span style="background:#8b5cf6" class="legend-dot"></span>BACR</span>
-          </div>
-          <p class="graph-desc">
-            <strong>Comment lire :</strong> Chaque barre = production totale d'une semaine, décomposée par famille. Permet de voir l'évolution du mix produit semaine par semaine. Un zoom par ligne est disponible (paramètre <code>facet_col</code>).
-          </p>
         </div>
       </div>
     </div>
@@ -429,49 +319,8 @@
         </div>
       </div>
       <div class="tab-content">
-        <div class="graph-card">
-          <div class="graph-header">
-            <h4>📊 Barres groupées — Taux d'utilisation par ligne et semaine</h4>
-            <span class="graph-type">Plotly Grouped Bar</span>
-          </div>
-          <div class="util-demo">
-            <div class="util-bars">
-              <div class="util-bar-group">
-                <div class="util-bar-label">PK</div>
-                <div class="util-bars-inner">
-                  <div class="util-seg" style="width:55.3%" title="S1: 55.3%">S1</div>
-                  <div class="util-seg" style="width:39.5%; background:#10b981" title="S2">S2</div>
-                  <div class="util-seg" style="width:41.6%; background:#f59e0b" title="S3">S3</div>
-                  <div class="util-seg" style="width:21.9%; background:#ef4444" title="S4">S4</div>
-                </div>
-              </div>
-              <div class="util-bar-group">
-                <div class="util-bar-label">CRMB</div>
-                <div class="util-bars-inner">
-                  <div class="util-seg goulot" style="width:99.6%">S1 🔴</div>
-                  <div class="util-seg" style="width:82.9%; background:#10b981">S2</div>
-                  <div class="util-seg" style="width:55.5%; background:#f59e0b">S3</div>
-                  <div class="util-seg" style="width:37%; background:#ef4444">S4</div>
-                </div>
-              </div>
-              <div class="util-bar-group">
-                <div class="util-bar-label">LGA</div>
-                <div class="util-bars-inner">
-                  <div class="util-seg goulot" style="width:100%">S1 🔴</div>
-                  <div class="util-seg" style="width:68.4%; background:#10b981">S2</div>
-                  <div class="util-seg" style="width:28.4%; background:#f59e0b">S3</div>
-                  <div class="util-seg" style="width:13.1%; background:#ef4444">S4</div>
-                </div>
-              </div>
-            </div>
-            <div class="util-threshold">
-              <div class="thresh-line" style="left:90%"><span>90% critique</span></div>
-              <div class="thresh-line thresh-warn" style="left:75%"><span>75% tension</span></div>
-            </div>
-          </div>
-          <p class="graph-desc">
-            <strong>Lignes rouges horizontales :</strong> seuil critique (90%) et seuil de tension (75%). Toute barre dépassant 90% identifie un <strong>goulot</strong> qui bloque des commandes.
-          </p>
+        <div class="ui-screenshot">
+          <img src="screenshot_lignes.png" alt="Taux d'utilisation par ligne et semaine" class="screenshot-img" />
         </div>
 
         <div class="alert-grid">
@@ -516,6 +365,9 @@
         </div>
       </div>
       <div class="tab-content">
+        <div class="ui-screenshot">
+          <img src="screenshot_commandes.png" alt="Onglet Commandes - Carnet de commandes interactif" class="screenshot-img" />
+        </div>
         <div class="feature-list">
           <div class="feature-item">
             <span class="feature-icon">🔍</span>
@@ -578,25 +430,27 @@
         </div>
       </div>
       <div class="tab-content">
-        <div class="graph-card">
-          <div class="graph-header">
-            <h4>💰 Barres — Marge totale par famille (MMAD)</h4>
-            <span class="graph-type">Plotly Bar</span>
-          </div>
-          <p class="graph-desc">
-            Compare la contribution de chaque famille à la marge globale. Permet d'identifier les familles les plus rentables et celles à prioriser. L'axe Y est en <strong>millions de MAD (MMAD)</strong>.
-          </p>
+        <div class="ui-screenshot">
+          <img src="screenshot_eco.png" alt="Analyse Économique - Marge et nuage de points" class="screenshot-img" />
         </div>
-        <div class="graph-card">
-          <div class="graph-header">
-            <h4>🔵 Nuage de points — Marge unitaire vs Tonnage livré</h4>
-            <span class="graph-type">Plotly Scatter</span>
+        
+        <div class="content-grid" style="margin-top: 1.5rem; gap: 2rem; margin-bottom: 2rem;">
+          <div class="content-block">
+            <h4 style="color:var(--text-primary); margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;">
+              <span>💰</span> Contribution à la Marge par Famille
+            </h4>
+            <p style="font-size:0.9rem; color:var(--text-secondary);">
+              Compare la contribution financière globale de chaque famille de produits (CRC, HDG, PPGI, BACR) en millions de MAD (MMAD). Permet d'identifier instantanément le principal moteur de rentabilité de l'usine.
+            </p>
           </div>
-          <p class="graph-desc">
-            Chaque point = une commande honorée. La taille du point ∝ tonnage. Axes : <strong>X = tonnage livré</strong>, <strong>Y = marge par tonne (MAD/T)</strong>. Les points en haut à droite = commandes les plus rentables en volume.
-            <br><br>
-            <strong>Hover :</strong> survoler un point affiche l'ID commande, le grade, l'épaisseur et la semaine.
-          </p>
+          <div class="content-block">
+            <h4 style="color:var(--text-primary); margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;">
+              <span>🔵</span> Analyse Volume vs Rentabilité (Scatter)
+            </h4>
+            <p style="font-size:0.9rem; color:var(--text-secondary);">
+              Chaque point représente une commande honorée. L'axe X correspond au tonnage livré, et l'axe Y à la marge par tonne (MAD/T). Les commandes situées en haut à droite sont les plus stratégiques (fort volume et forte marge unitaire).
+            </p>
+          </div>
         </div>
         <div class="rec-grid">
           <div class="rec-card">
@@ -634,14 +488,8 @@
             <strong>Shadow price (prix dual) :</strong> Si on relâche une contrainte d'une unité (1 tonne, 1 MAD…), de combien augmente la marge optimale ? C'est la <em>valeur marginale</em> de cette contrainte.
           </div>
         </div>
-        <div class="graph-card">
-          <div class="graph-header">
-            <h4>📊 Barres horizontales — Top Shadow Prices</h4>
-            <span class="graph-type">Plotly Horizontal Bar (RdBu scale)</span>
-          </div>
-          <p class="graph-desc">
-            Les barres bleues foncées = contraintes de demande (commandes rentables non satisfaites). Les barres rouges = contraintes de capacité saturées. Triées par valeur absolue décroissante = les contraintes les plus critiques en premier.
-          </p>
+        <div class="ui-screenshot">
+          <img src="screenshot_shadow.png" alt="Analyse des Shadow Prices" class="screenshot-img" />
         </div>
         <h4 style="margin:1.5rem 0 0.75rem; color:var(--text-primary)">Interprétation des 3 principaux shadow prices</h4>
         <table class="doc-table">
@@ -1119,8 +967,8 @@ python main.py --output mes_resultats/</code></pre>
         <h4>Cas de référence</h4>
         <p>Données initiales sans modification. Sert de référence pour comparer tous les autres scénarios.</p>
         <div class="sc-results">
-          <div class="sc-kpi"><span>42.9M MAD</span> marge</div>
-          <div class="sc-kpi"><span>88%</span> taux service</div>
+          <div class="sc-kpi"><span>34.7M MAD</span> marge</div>
+          <div class="sc-kpi"><span>73.5%</span> taux service</div>
         </div>
         <code>python main.py</code>
       </div>
@@ -1182,11 +1030,11 @@ python main.py --output mes_resultats/</code></pre>
         <thead><tr><th>Indicateur</th><th>Valeur</th><th>Interprétation</th></tr></thead>
         <tbody>
           <tr><td><strong>Statut</strong></td><td>✅ Optimal</td><td>Le solveur a trouvé la solution optimale (pas d'infeasibilité)</td></tr>
-          <tr><td><strong>Marge totale</strong></td><td>42 893 888 MAD</td><td>≈ 42.9 millions de MAD sur 4 semaines</td></tr>
-          <tr><td><strong>Taux de service global</strong></td><td>88.0%</td><td>14 929 T livrées sur 16 958 T demandées</td></tr>
+          <tr><td><strong>Marge totale</strong></td><td>34 684 245 MAD</td><td>≈ 34.7 millions de MAD sur 4 semaines</td></tr>
+          <tr><td><strong>Taux de service global</strong></td><td>73.5%</td><td>12 469 T livrées sur 16 958 T demandées</td></tr>
           <tr><td><strong>Tonnage non livré</strong></td><td>2 029 T</td><td>Bloqué principalement par saturation CRMB + LGA en S1</td></tr>
-          <tr><td><strong>Commandes refusées</strong></td><td>8 / 65</td><td>12.3% des commandes, généralement de priorité Basse</td></tr>
-          <tr><td><strong>Marge moyenne/tonne</strong></td><td>≈ 2 874 MAD/T</td><td>Après déduction HRC, transformation, zinc/peinture</td></tr>
+          <tr><td><strong>Commandes refusées</strong></td><td>14 / 65</td><td>21.5% des commandes, impactées par le goulot LGA ou la dispo HRC S320</td></tr>
+          <tr><td><strong>Marge moyenne/tonne</strong></td><td>≈ 2 782 MAD/T</td><td>Après déduction HRC, transformation, zinc/peinture</td></tr>
         </tbody>
       </table>
     </div>
@@ -1262,7 +1110,7 @@ python main.py --output mes_resultats/</code></pre>
               <li><strong>BACR :</strong> Deux voies coexistent :
                 <ul>
                   <li><em>Voie A (thermique) :</em> HRC &rarr; PK &rarr; CRMB &rarr; BAF &rarr; LGB &rarr; BACR.</li>
-                  <li><em>Voie B (directe) :</em> HRC &rarr; PK &rarr; {CRMA ou CRMB} &rarr; {LGA ou LGB} &rarr; BACR.</li>
+                  <li><em>Voie B (directe) :</em> HRC &rarr; PK &rarr; {CRMA ou CRMB} &rarr; LGA &rarr; BACR (LGB non disponible sans traitement thermique).</li>
                 </ul>
               </li>
               <li><strong>HRC DEC :</strong> HRC &rarr; PK &rarr; HRC DEC (Processus simple).</li>
@@ -1361,11 +1209,12 @@ python main.py --output mes_resultats/</code></pre>
             <strong>Contraintes de capacité des lignes</strong>
           </summary>
           <div class="q-answer-content">
-            <p>Pour chaque ligne physique <code>L</code> (PK, CRMA, CRMB, BAF, SKP, LGA, LGB) et chaque semaine <code>s &isin; [1..4]</code> :</p>
-            <p>$$\sum_{i, k | L \in k \text{ et } sem_i = s} \text{coeff\_charge}[k, L] \times x[i, k] \le CapNet_{L, s}$$</p>
+            <p>Pour chaque ligne physique <code>L</code> (PK, CRMA, CRMB, BAF, SKP, LGA, LGB) et chaque semaine <code>s &isin; [1..4]</code>, la contrainte de capacité est exprimée en temps (jours de fonctionnement) :</p>
+            <p>$$\sum_{i, k | L \in k \text{ et } sem_i = s} \frac{\text{coeff\_charge}[k, L] \times x[i, k]}{\text{Cadence}_L} \le 7 - \text{Arrets}_{L, s}$$</p>
             <ul>
               <li><strong>coeff_charge[k, L] :</strong> Tonnage brut devant passer par la ligne <code>L</code> pour chaque tonne de produit fini en sortie. Il est égal à <code>1 / (rendement_cumulé_avant_L)</code>.</li>
-              <li><strong>CapNet[L, s] :</strong> Capacité nette hebdomadaire de la ligne (T/semaine), égale à <code>Cadence[L] &times; (7 - Arrets[L, s])</code>, où <code>Arrets[L, s]</code> représente les jours d'arrêt planifiés pour maintenance cette semaine-là.</li>
+              <li><strong>Cadence_L :</strong> Cadence nominale de la ligne (T/jour).</li>
+              <li><strong>Arrets[L, s] :</strong> Jours d'arrêt planifiés pour maintenance sur la ligne <code>L</code> en semaine <code>s</code>. Le temps de fonctionnement net disponible par semaine est donc de <code>7 - Arrets[L, s]</code> jours.</li>
             </ul>
           </div>
         </details>
@@ -1408,7 +1257,7 @@ python main.py --output mes_resultats/</code></pre>
             <ul>
               <li><strong>Variables $x[i, k]$ :</strong> Exprimées en Tonnes (T).</li>
               <li><strong>Fonction Objectif :</strong> $\text{Marge\_unitaire} (\text{MAD/T}) \times x (\text{T}) = \text{MAD}$ (Monnaie, cohérent).</li>
-              <li><strong>Contraintes de Capacité :</strong> $\text{Coefficient (adimensionnel)} \times x (\text{T}) = \text{T}$, qui est comparé à la capacité maximale exprimée en Tonnes (T).</li>
+              <li><strong>Contraintes de Capacité :</strong> $\frac{\text{Coefficient (adimensionnel)} \times x (\text{T})}{\text{Cadence (T/Jour)}} = \text{Jours}$, qui est comparé au temps de fonctionnement net disponible (7 - Arrêts) en Jours.</li>
               <li><strong>Contraintes HRC et Stock :</strong> Comparaison directe de grandeurs physiques exprimées en Tonnes (T).</li>
             </ul>
           </div>
@@ -1501,9 +1350,9 @@ python main.py --output mes_resultats/</code></pre>
           <div class="q-answer-content">
             <p>La résolution donne les résultats optimaux suivants :</p>
             <ul>
-              <li><strong>Valeur de la fonction objectif (Marge Totale) :</strong> <code>42 893 888 MAD</code> (~42.9 MMAD).</li>
-              <li><strong>Taux de service global :</strong> <code>88.0 %</code> (14 929 tonnes livrées sur 16 958 tonnes demandées).</li>
-              <li><strong>Commandes refusées :</strong> <code>8</code> commandes sur 65 (taux de livraison &lt; 5%).</li>
+              <li><strong>Valeur de la fonction objectif (Marge Totale) :</strong> <code>34 684 245 MAD</code> (~34.7 MMAD).</li>
+              <li><strong>Taux de service global :</strong> <code>73.5 %</code> (12 469 tonnes livrées sur 16 958 tonnes demandées).</li>
+              <li><strong>Commandes refusées :</strong> <code>14</code> commandes sur 65 (taux de livraison &lt; 5%).</li>
             </ul>
           </div>
         </details>
@@ -1570,15 +1419,15 @@ python main.py --output mes_resultats/</code></pre>
             <strong>Taux d'utilisation hebdomadaire &amp; Goulots d'étranglement</strong>
           </summary>
           <div class="q-answer-content">
-            <p>Taux d'utilisation des lignes clés (scénario de base) :</p>
+            <p>Taux d'utilisation des lignes clés (scénario de base, exprimé en % du temps disponible) :</p>
             <ul>
-              <li><strong>CRMB (Laminoir) :</strong> S1 = <code>99.6%</code> (Goulot), S2 = <code>82.9%</code>, S3 = <code>55.5%</code>, S4 = <code>37.0%</code>.</li>
-              <li><strong>LGA (Galvanisation) :</strong> S1 = <code>100.0%</code> (Goulot), S2 = <code>68.4%</code>, S3 = <code>28.4%</code>, S4 = <code>13.1%</code>.</li>
-              <li><strong>BAF (Recuit BAF) :</strong> S1 = <code>64.0%</code>, S2 = <code>23.6%</code>, S3 = <code>100.0%</code> (Goulot), S4 = <code>84.0%</code>.</li>
-              <li><strong>LGB (Galvanisation) :</strong> S1 = <code>77.4%</code>, S2 = <code>55.1%</code>, S3 = <code>36.3%</code>, S4 = <code>18.5%</code>.</li>
+              <li><strong>CRMB (Laminoir) :</strong> S1 = <code>64.1%</code>, S2 = <code>75.9%</code> (Goulot local), S3 = <code>51.8%</code>, S4 = <code>37.0%</code>.</li>
+              <li><strong>LGA (Galvanisation) :</strong> S1 = <code>100.0%</code> (Goulot absolu), S2 = <code>63.8%</code>, S3 = <code>28.5%</code>, S4 = <code>57.4%</code>.</li>
+              <li><strong>BAF (Recuit thermique) :</strong> S1 = <code>55.2%</code>, S2 = <code>41.0%</code>, S3 = <code>100.0%</code> (Goulot absolu), S4 = <code>84.0%</code>.</li>
+              <li><strong>LGB (Galvanisation) :</strong> S1 = <code>37.2%</code>, S2 = <code>63.5%</code>, S3 = <code>47.3%</code>, S4 = <code>0.0%</code>.</li>
               <li><strong>CRMA (Laminoir) :</strong> <code>0%</code> sur les 4 semaines (Ligne non chargée dans le cas de base).</li>
             </ul>
-            <p><strong>Conclusion :</strong> Les goulots majeurs sont le laminoir <strong>CRMB</strong> et la ligne de galvanisation <strong>LGA</strong> en semaine 1 (qui saturent la production), ainsi que la ligne thermique <strong>BAF</strong> en semaine 3.</p>
+            <p><strong>Conclusion :</strong> Les goulots majeurs sont la ligne de galvanisation <strong>LGA</strong> en semaine 1 (100% d'utilisation) et la ligne de recuit thermique <strong>BAF</strong> en semaine 3 (100% d'utilisation). Le laminoir CRMB est fortement sollicité en semaine 2 (75.9%) mais ne sature pas complètement.</p>
           </div>
         </details>
 
@@ -1589,11 +1438,11 @@ python main.py --output mes_resultats/</code></pre>
             <strong>Commandes refusées et contraintes bloquantes</strong>
           </summary>
           <div class="q-answer-content">
-            <p>Les 8 commandes refusées sont :</p>
+            <p>Les 14 commandes refusées sont principalement :</p>
             <ul>
-              <li><strong>CMD-032 (CRC, DX51, S1, 576T, Haute) :</strong> Refusée en raison de la saturation du laminoir <strong>CRMB</strong> en S1 (chargé à 99.6%). Le modèle alloue préférentiellement la capacité de CRMB à des commandes générant une meilleure marge par heure ou pour respecter les stocks de sécurité.</li>
-              <li><strong>Les commandes de grade S320 (CMD-010, CMD-023, CMD-027, CMD-047, CMD-050, CMD-053) :</strong> Refusées car la disponibilité totale de matière première en HRC de grade <strong>S320</strong> est saturée (disponibilité épuisée).</li>
-              <li><strong>CMD-030 (CRC, DX51, S1, 87T, Basse) :</strong> Refusée par arbitrage de marge sur les goulots en S1.</li>
+              <li><strong>CMD-032 (CRC, DX51, S1, 576T, Haute) :</strong> Refusée en raison de la saturation de la ligne LGA en S1 (100% d'utilisation). Le modèle alloue préférentiellement la capacité LGA à des commandes générant une meilleure marge ou pour respecter les stocks de sécurité.</li>
+              <li><strong>Les commandes de grade S320 (CMD-010, CMD-023, CMD-027, CMD-047, CMD-048, CMD-050, CMD-053) :</strong> Refusées car la disponibilité totale de matière première en HRC de grade <strong>S320</strong> est saturée (920 T disponibles face à une demande de 1935 T).</li>
+              <li><strong>CMD-002 (PPGI, DX51, S1, 356T, Haute) & CMD-014 (PPGI, DC01, S1, 414T, Haute) :</strong> Refusées en raison du goulot LGA en S1.</li>
             </ul>
           </div>
         </details>
@@ -1605,13 +1454,14 @@ python main.py --output mes_resultats/</code></pre>
             <strong>Shadow Prices (prix duaux) et interprétation business</strong>
           </summary>
           <div class="q-answer-content">
-            <p>Les contraintes de demandes saturées ont les shadow prices les plus élevés :</p>
+            <p>Les contraintes de capacité saturées et de demandes ont les shadow prices les plus élevés :</p>
             <ul>
-              <li><code>dem_CMD_042</code> : <code>4 740.09 MAD</code> (Si on pouvait vendre 1 tonne de plus de la commande CMD-042, la marge globale augmenterait de 4 740 MAD).</li>
-              <li><code>dem_CMD_028</code> : <code>4 520.03 MAD</code>.</li>
-              <li><code>dem_CMD_014</code> : <code>4 290.63 MAD</code>.</li>
+              <li><code>cap_time_LGA_S1</code> : <code>750 530.47 MAD/jour</code> (Gagner un jour de fonctionnement sur la ligne LGA en semaine 1 permettrait d'augmenter la marge globale de 750k MAD).</li>
+              <li><code>cap_time_BAF_S3</code> : <code>324 111.29 MAD/jour</code> (Gagner un jour de fonctionnement sur la ligne BAF en semaine 3 permettrait d'augmenter la marge globale de 324k MAD).</li>
+              <li><code>dem_CMD_042</code> : <code>4 860.09 MAD</code> (Vendre 1 tonne de plus de la commande CMD-042 augmenterait la marge de 4.8k MAD).</li>
+              <li><code>dem_CMD_020</code> : <code>4 812.71 MAD</code>.</li>
+              <li><code>dem_CMD_028</code> : <code>4 640.03 MAD</code>.</li>
             </ul>
-            <p>Ces shadow prices correspondent à la marge nette unitaire de ces commandes très rentables qui ne sont limitées que par la demande client. Pour les contraintes de capacité saturées (ex: <code>cap_LGA_S1</code> ou <code>cap_CRMB_S1</code>), le shadow price indique le gain marginal apporté par une heure ou une tonne de capacité machine supplémentaire.</p>
           </div>
         </details>
 
@@ -1622,11 +1472,11 @@ python main.py --output mes_resultats/</code></pre>
             <strong>Marge moyenne par tonne et priorité des familles</strong>
           </summary>
           <div class="q-answer-content">
-            <p>La marge moyenne globale sur les produits livrés est de <strong>2 874 MAD/T</strong>.</p>
+            <p>La marge moyenne globale sur les produits livrés est de <strong>2 782 MAD/T</strong>.</p>
             <p><strong>Par famille :</strong></p>
             <ul>
-              <li>Les familles <strong>PPGI</strong> (pré-laqué) et <strong>HDG</strong> (galvanisé) dégagent les marges unitaires les plus élevées (souvent supérieures à 3 500 MAD/T) en raison de la valeur ajoutée apportée par le zinc et la peinture. Elles sont donc servies en priorité absolue par le modèle.</li>
-              <li>Le <strong>CRC</strong> a une marge unitaire plus faible (commodité) et sert souvent de variable d'ajustement.</li>
+              <li>Les familles <strong>PPGI</strong> (pré-laqué) et <strong>HDG</strong> (galvanisé) dégagent les marges unitaires les plus élevées (souvent supérieures à 3 500 MAD/T) en raison de la forte valeur ajoutée du zinc et de la peinture. Elles sont donc servies en priorité absolue par le modèle.</li>
+              <li>Le <strong>CRC</strong> a une marge unitaire plus faible (commodité) et sert de variable d'ajustement.</li>
             </ul>
           </div>
         </details>
@@ -1657,9 +1507,9 @@ python main.py --output mes_resultats/</code></pre>
           <div class="q-answer-content">
             <p>Une hausse de 10% sur les prix HRC a un impact financier majeur :</p>
             <ul>
-              <li><strong>Marge totale :</strong> Chute à <code>33 171 395 MAD</code> (soit une perte sèche de <strong>9.72 MMAD</strong>, soit -22.7%).</li>
-              <li><strong>Taux de service :</strong> Baisse à <code>85.2%</code>.</li>
-              <li><strong>Commandes refusées :</strong> Passe à <code>9</code>. La commande <code>CMD-036</code> (HRC DEC, 475T, priorité Haute) est désormais refusée car la hausse de prix rend sa marge négative ou non compétitive par rapport aux autres commandes.</li>
+              <li><strong>Marge totale :</strong> Chute à <code>26 550 384 MAD</code> (soit une baisse de 8.13 MMAD, ou -23.5% par rapport au cas de base).</li>
+              <li><strong>Taux de service :</strong> Baisse à <code>70.7%</code>.</li>
+              <li><strong>Commandes refusées :</strong> Passe à <code>15</code>. La commande <code>CMD-036</code> (HRC DEC, 475T, priorité Haute) est désormais refusée car la hausse de prix rend sa marge négative ou non compétitive par rapport aux autres commandes.</li>
             </ul>
           </div>
         </details>
@@ -1671,10 +1521,10 @@ python main.py --output mes_resultats/</code></pre>
             <strong>Scénario &laquo; panne machine LGB S2 &raquo;</strong>
           </summary>
           <div class="q-answer-content">
-            <p>La panne de 2 jours supplémentaires sur LGB en semaine 2 n'a <strong>aucun impact</strong> sur la marge totale (42 893 888 MAD) ni sur le taux de service (88.0%) :</p>
+            <p>La panne de 2 jours supplémentaires sur LGB en semaine 2 n'a <strong>aucun impact</strong> sur la marge totale (qui reste à 34 684 245 MAD) ni sur le taux de service (73.5%) :</p>
             <ul>
-              <li>L'utilisation de la ligne LGB en semaine 2 augmente simplement de <code>55.1%</code> (cas de base) à <code>77.1%</code>.</li>
-              <li>LGB n'étant pas un goulot en semaine 2, la capacité restante est suffisante pour absorber la panne. Cette information est précieuse pour la maintenance : une panne de 2 jours sur LGB en S2 n'est pas critique pour le plan de livraison.</li>
+              <li>L'utilisation de la ligne LGB en semaine 2 augmente simplement de <code>63.5%</code> (cas de base) à <code>88.9%</code>.</li>
+              <li>LGB n'étant pas un goulot en semaine 2, la capacité restante est suffisante pour absorber la panne sans affecter le plan de livraison.</li>
             </ul>
           </div>
         </details>
@@ -1688,8 +1538,8 @@ python main.py --output mes_resultats/</code></pre>
           <div class="q-answer-content">
             <p>Le modèle **accepte en totalité** la commande urgente (300T de HDG en S1) :</p>
             <ul>
-              <li><strong>Marge totale :</strong> Passe à <code>44 093 096 MAD</code> (soit un gain net de <strong>1.20 MMAD</strong>).</li>
-              <li><strong>Routage :</strong> Pour contourner la saturation de CRMB et LGA en S1, le modèle utilise désormais la ligne <strong>CRMA</strong> (dont l'utilisation passe à 5.1%) et la ligne <strong>LGB</strong> en S1 (dont l'utilisation passe à 84.9%). Le solveur a réorganisé de façon optimale les chemins de production d'autres commandes pour libérer la place nécessaire.</li>
+              <li><strong>Marge totale :</strong> Passe à <code>34 857 916 MAD</code> (soit un gain net de 173 671 MAD par rapport au cas de base).</li>
+              <li><strong>Routage :</strong> Le modèle route la commande urgente via le chemin standard HDG_B (utilisant LGA en S1). Pour respecter la capacité limite de LGA en S1, le solveur a refusé la commande CMD-001 (423 T de HDG en S1), ce qui a libéré la capacité nécessaire.</li>
             </ul>
           </div>
         </details>
@@ -1782,7 +1632,7 @@ python main.py --output mes_resultats/</code></pre>
 <footer class="site-footer">
   <div class="footer-content">
     <div class="footer-brand">
-      <span class="footer-logo">🏭</span>
+      <img class="footer-logo" src="../logo_maghreb_steel.jpg" height="32" style="vertical-align: middle; margin-right: 12px; border-radius: 4px;"/>
       <div>
         <div class="footer-title">Maghreb Steel — Simulateur Capacité-Commande</div>
         <div class="footer-sub">EMINES UM6P · Projet Recherche Opérationnelle · Promotion 2026</div>

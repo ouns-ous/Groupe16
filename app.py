@@ -30,9 +30,22 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+import base64
 
 from src.model import build_and_solve, export_results
 from src.scenarios import analyse_enveloppe_dc01, analyse_robustesse_cadences
+
+def get_base64_logo():
+    for ext in ["jpg", "jpeg", "png"]:
+        logo_path = os.path.join(str(ROOT), f"logo_maghreb_steel.{ext}")
+        if os.path.exists(logo_path):
+            with open(logo_path, "rb") as f:
+                encoded = base64.b64encode(f.read()).decode()
+                mime = "image/jpeg" if ext in ["jpg", "jpeg"] else "image/png"
+                return mime, encoded
+    return None, ""
+
+logo_mime, logo_base64 = get_base64_logo()
 
 def style_plotly_light(fig):
     fig.update_layout(
@@ -66,9 +79,15 @@ def style_plotly_light(fig):
 # ─────────────────────────────────────────────────────────────────────────────
 # CONFIG PAGE
 # ─────────────────────────────────────────────────────────────────────────────
+def get_logo_file():
+    for ext in ["jpg", "jpeg", "png"]:
+        if os.path.exists(os.path.join(str(ROOT), f"logo_maghreb_steel.{ext}")):
+            return f"logo_maghreb_steel.{ext}"
+    return "🏭"
+
 st.set_page_config(
     page_title="Maghreb Steel — Simulateur Capacité-Commande",
-    page_icon="🏭",
+    page_icon=get_logo_file(),
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -90,6 +109,9 @@ st.markdown("""
     margin-bottom: 1.5rem;
     border: 1px solid #e2e8f0;
     box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 }
 .main-header h1 {
     color: #1e293b;
@@ -250,13 +272,22 @@ st.markdown("""
 # SIDEBAR
 # ─────────────────────────────────────────────────────────────────────────────
 with st.sidebar:
-    st.markdown("""
-    <div style='text-align:center; padding: 1rem 0;'>
-        <div style='font-size:2rem;'>🏭</div>
-        <div style='font-size:1.1rem; font-weight:700; color:#f39200;'>Maghreb Steel</div>
-        <div style='font-size:0.8rem; color:#475569;'>Simulateur Capacité-Commande</div>
-    </div>
-    """, unsafe_allow_html=True)
+    if logo_base64:
+        st.markdown(f"""
+        <div style='text-align:center; padding: 1rem 0;'>
+            <img src='data:{logo_mime};base64,{logo_base64}' style='width: 80px; margin-bottom: 0.5rem;'/>
+            <div style='font-size:1.1rem; font-weight:700; color:#f39200;'>Maghreb Steel</div>
+            <div style='font-size:0.8rem; color:#475569;'>Simulateur Capacité-Commande</div>
+        </div>
+        """, unsafe_allow_html=True)
+    else:
+        st.markdown("""
+        <div style='text-align:center; padding: 1rem 0;'>
+            <div style='font-size:2rem;'>🏭</div>
+            <div style='font-size:1.1rem; font-weight:700; color:#f39200;'>Maghreb Steel</div>
+            <div style='font-size:0.8rem; color:#475569;'>Simulateur Capacité-Commande</div>
+        </div>
+        """, unsafe_allow_html=True)
 
     st.markdown("---")
     st.markdown("### ⚙️ Configuration")
@@ -316,13 +347,25 @@ with st.sidebar:
 # ─────────────────────────────────────────────────────────────────────────────
 # HEADER
 # ─────────────────────────────────────────────────────────────────────────────
-st.markdown("""
-<div class='main-header'>
-    <div class='logo-badge'>MAGHREB STEEL</div>
-    <h1>🏭 Simulateur Capacité-Commande</h1>
-    <p>Optimisation multi-périodes · Multi-produits · Multi-ressources · Horizon 4 semaines</p>
-</div>
-""", unsafe_allow_html=True)
+if logo_base64:
+    st.markdown(f"""
+    <div class='main-header'>
+        <img src='data:{logo_mime};base64,{logo_base64}' style='width: 75px; height: auto;'/>
+        <div>
+            <div class='logo-badge'>MAGHREB STEEL</div>
+            <h1 style='margin: 0; font-size: 2rem;'>Simulateur Capacité-Commande</h1>
+            <p style='margin: 0.2rem 0 0 0;'>Optimisation multi-périodes · Multi-produits · Multi-ressources · Horizon 4 semaines</p>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+else:
+    st.markdown("""
+    <div class='main-header'>
+        <div class='logo-badge'>MAGHREB STEEL</div>
+        <h1>🏭 Simulateur Capacité-Commande</h1>
+        <p>Optimisation multi-périodes · Multi-produits · Multi-ressources · Horizon 4 semaines</p>
+    </div>
+    """, unsafe_allow_html=True)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
